@@ -19,7 +19,7 @@ $(function () {
       // Get the current hour using Day.js
       var currentHour = dayjs().hour();
       var timeBlockHour = parseInt(timeBlockId.split('-')[1]);  
-      // Compare the time-block id to the current hour and add the appropriate class
+      // Compare the time-block hour to the current hour and add the appropriate class
       if (timeBlockHour < currentHour) {
         $(this).addClass('past');
       } else if (timeBlockHour === currentHour) {
