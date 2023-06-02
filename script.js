@@ -18,14 +18,14 @@ $(function () {
   
       // Get the current hour using Day.js
       var currentHour = dayjs().hour();
-  
+      var timeBlockHour = parseInt(timeBlockId.split('-')[1]);  
       // Compare the time-block id to the current hour and add the appropriate class
-      if (timeBlockId < currentHour) {
+      if (timeBlockHour < currentHour) {
         $(this).addClass('past');
-      } else if (timeBlockId > currentHour) {
-        $(this).addClass('future');
-      } else {
+      } else if (timeBlockHour === currentHour) {
         $(this).addClass('present');
+      } else {
+        $(this).addClass('future');
       }
     });
   
